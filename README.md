@@ -5,7 +5,7 @@ This project analyzes a loan dataset (2007–2011) to identify variables that in
 
 The project involves data cleaning, feature engineering, exploratory data analysis (EDA), and visualization using Python.
 
-**Dataset Description******
+**Dataset Description**
 
 The dataset contains loan records with various borrower attributes and loan details.
 
@@ -30,6 +30,55 @@ loan_status → Current status of the loan (Fully Paid, Charged Off, etc.).
 term → Loan term in months (36 or 60).
 
 purpose → Purpose of the loan (credit card, debt consolidation, etc.).
+
+
+**Project Objectives**
+
+The following tasks were performed step by step:
+
+Import and explore the dataset.
+
+Find number of rows and columns.
+
+Convert int_rate column from string to float using a lambda function.
+
+Check data types of all columns.
+
+Clean dataset by removing columns with all NaN values.
+
+Analyze loan_status column and filter only “Fully Paid” and “Charged Off” loans.
+
+Extract numerical values from emp_length column (e.g., < 1 year → 1).
+
+Clean term column (e.g., 36 months → 36).
+
+Create a new feature risky_loan_applicant:
+
+      0 → If loan_amnt <= funded_amnt
+
+      1 → If loan_amnt > funded_amnt
+
+Visualize loan_status against categorical variables: grade, term, verification_status.
+
+Convert emp_length into categories:
+
+    fresher → emp_len ≤ 1
+
+    junior → 1 < emp_len < 3
+
+    senior → 3 ≤ emp_len < 7
+
+    expert → emp_len ≥ 7
+
+Find the sum of loan_amnt for each grade and visualize using a pie chart.
+
+**📊 Visualizations**
+
+Bar Plots: Loan Status vs Grade, Term, Verification Status.
+
+Pie Plot: Loan amount distribution by Grade.
+
+These help in identifying patterns in loan repayment and risk profiles across borrower categories.
 
 total_acc → Total credit lines of the borrower.
 
